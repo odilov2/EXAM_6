@@ -1,4 +1,5 @@
 from django.db import models
+from mdeditor.fields import MDTextField
 
 
 class Categories(models.Model):
@@ -10,7 +11,7 @@ class Categories(models.Model):
 
 class Products(models.Model):
     title = models.CharField(max_length=30)
-    description = models.TextField()
+    description = MDTextField()
     price = models.FloatField()
     image = models.ImageField(upload_to='product/product')
     category_id = models.ForeignKey(Categories, on_delete=models.CASCADE)
@@ -26,6 +27,6 @@ class Products(models.Model):
 
 class FeaturedProducts(models.Model):
     title = models.CharField(max_length=20)
-    description = models.TextField()
+    description = MDTextField()
     price = models.FloatField()
     image = models.ImageField(upload_to='product/product')
