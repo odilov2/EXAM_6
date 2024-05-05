@@ -12,6 +12,7 @@ urlpatterns = [
     path('', include('users.urls')),
     path('', LandingPageView.as_view(), name='landing'),
     path(r'mdeditor/', include('mdeditor.urls')),
+    path('api/v1/', include('music.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
