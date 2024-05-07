@@ -29,12 +29,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'import_export',
-    #apps
+    # apps
     'products',
     'users',
     'music',
     'mdeditor',
-    #framework
+    'api',
+    # framework
     'rest_framework',
     'rest_framework.authtoken',
 ]
