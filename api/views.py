@@ -4,8 +4,8 @@ from users.models import Users
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
-from .serialisers import (ArtistSerializer, AlbomSerializer, SongsSerializer, CategoriesSerializer, ProductsSerializer,
-                          FeaturedProductsSerializer, UsersSerializer)
+from .serialisers import (CategoriesSerializer, ProductsSerializer,
+                          FeaturedProductsSerializer, UsersSerializer, ArtistSerializer, AlbomSerializer, SongsSerializer)
 
 from rest_framework import filters
 from rest_framework.pagination import LimitOffsetPagination
@@ -26,7 +26,7 @@ class AlbomAPIViewSet(ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated, )
     filter_backends = (filters.SearchFilter,)
-    search_fields = ['=title', ]
+    search_fields = ['title', ]
     pagination_class = LimitOffsetPagination
 
 class SongAPIViewSet(ModelViewSet):
@@ -35,7 +35,7 @@ class SongAPIViewSet(ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated, )
     filter_backends = (filters.SearchFilter, )
-    search_fields = ['=title', ]
+    search_fields = ['title', ]
     pagination_class = LimitOffsetPagination
 
 class CategoryAPIViewSet(ModelViewSet):
@@ -44,7 +44,7 @@ class CategoryAPIViewSet(ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated, )
     filter_backends = (filters.SearchFilter, )
-    search_fields = ['=title', ]
+    search_fields = ['title', ]
     pagination_class = LimitOffsetPagination
 
 class ProductsAPIViewSet(ModelViewSet):
@@ -53,7 +53,7 @@ class ProductsAPIViewSet(ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated, )
     filter_backends = (filters.SearchFilter, )
-    search_fields = ['=title', 'price']
+    search_fields = ['title', 'price']
     pagination_class = LimitOffsetPagination
 
 
@@ -63,7 +63,7 @@ class FeaturedProductsAPIViewSet(ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated, )
     filter_backends = (filters.SearchFilter, )
-    search_fields = ['=title', 'price']
+    search_fields = ['title', 'price']
     pagination_class = LimitOffsetPagination
 
 
@@ -73,6 +73,6 @@ class UsersAPIViewSet(ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated, )
     filter_backends = (filters.SearchFilter, )
-    search_fields = ['=first_name', ]
+    search_fields = ['first_name', ]
     pagination_class = LimitOffsetPagination
 
