@@ -7,3 +7,4 @@ class Users(models.Model):
     email = models.CharField(max_length=20)
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
+    age = models.IntegerField(null=True, blank=True)

@@ -1,4 +1,3 @@
-
 from rest_framework import serializers
 from music.models import Artist, Albom, Songs
 from products.models import Categories, Products, FeaturedProducts
@@ -8,13 +7,13 @@ from users.models import Users
 class ArtistSerializer(serializers.ModelSerializer):
     class Meta:
         model = Artist
-        fields = ('name', 'image')
+        fields = '__all__'
 
 
 class AlbomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Albom
-        fields = ('title', 'artist')
+        fields = '__all__'
 
 
 class SongsSerializer(serializers.ModelSerializer):
@@ -22,32 +21,32 @@ class SongsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Songs
-        fields = ('title', 'albom')
+        fields = '__all__'
 
 
 class CategoriesSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Categories
-        fields = ('title', )
+        fields = '__all__'
 
 
 class ProductsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Products
-        fields = ('title', 'description', 'price')
+        fields = '__all__'
 
 
 class FeaturedProductsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FeaturedProducts
-        fields = ('title', 'description', 'price')
+        fields = '__all__'
 
 
 class UsersSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Users
-        fields = ('first_name', 'last_name')
+        fields = '__all__'

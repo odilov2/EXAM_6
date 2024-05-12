@@ -30,3 +30,6 @@ class FeaturedProducts(models.Model):
     description = MDTextField()
     price = models.FloatField()
     image = models.ImageField(upload_to='product/product')
+
+
+
