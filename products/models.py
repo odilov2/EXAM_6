@@ -5,6 +5,9 @@ from mdeditor.fields import MDTextField
 class Categories(models.Model):
     title = models.CharField(max_length=20)
 
+    class Meta:
+        db_table = 'categories'
+
     def __str__(self):
         return self.title
 
@@ -15,11 +18,14 @@ class Products(models.Model):
     price = models.FloatField()
     image = models.ImageField(upload_to='product/product')
     category_id = models.ForeignKey(Categories, on_delete=models.CASCADE)
-    country = models.CharField(max_length=20)
-    lifetime = models.DateField()
-    quality = models.CharField(max_length=30)
-    checks = models.CharField(max_length=20)
-    weight = models.FloatField()
+    # country = models.CharField(max_length=20)
+    # lifetime = models.DateField()
+    # quality = models.CharField(max_length=30)
+    # checks = models.CharField(max_length=20)
+    # weight = models.FloatField()
+
+    class Meta:
+        db_table = 'products'
 
     def __str__(self):
         return self.title
@@ -30,6 +36,9 @@ class FeaturedProducts(models.Model):
     description = MDTextField()
     price = models.FloatField()
     image = models.ImageField(upload_to='product/product')
+
+    class Meta:
+        db_table = 'featuredproducts'
 
 
 
